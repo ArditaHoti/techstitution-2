@@ -1,0 +1,18 @@
+<html>
+    <head>Get method
+</head>
+    <body>
+<form method="POST">
+<p>Emri:</p>
+<br>
+<input type="text" name="field1"/><br>
+<p>Mbiemri</p>
+<input type="text" name="field2"/><br>
+<input type="submit" value="Register"/>
+</form>
+  {{error }}    
+
+               
+    </body>
+</html>
+ 

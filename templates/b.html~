@@ -1,0 +1,22 @@
+<html>
+    <head>Get method
+</head>
+    <body>
+<form>
+<p>Emri:</p>
+<br>
+<inputtype="text" ><br>
+<p>Mbiemri</p>
+<input type="text" ><br>
+</form>
+      
+                <code><pre>
+@app.route('/')
+def form():
+    return render_template('form_submit.html')
+                </pre></code>
+            </div>
+        </div>
+    </body>
+</html>
+ 
