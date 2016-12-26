@@ -1,0 +1,258 @@
+{% extends "layout.hmtl" %}
+
+{% block header %}
+
+<ul >
+   <li >
+       <img src="../static/arkep2.png" style="margin-left:6px;margin-top:-5px;margin-right:2px;"></img>
+   </li>
+  
+   <li >
+      <img src="../static/ARKEP3.png" style="cursor:default;margin-left:6px;margin-top:-6%;margin-right:2px;"></img>
+   </li>
+  
+   <li style="cursor:pointer;float:right;font-size:20px;margin-right:3%;margin-top:-1%;">
+         <a href="http://www.arkep-rks.org/">
+        <img src="../static/home.png" style="margin-left:-4px;margin-top:-7px;margin-right:3px;"></img>Home
+        </a>
+   </li>
+</ul>
+  
+<h1 class="a1">Formular Njoftimi</h1>
+
+     <p class="a2">Hyrje ne aktivitetin e Komunikimeve Elektronike</p>
+             <br>
+ 
+     <p class="a3">
+        Autoriteti do te procedoj me shqyrtimin e Formularit te Njoftimit vete pas kompletimit te Dosjes dhe do ta njoftoj ndermarresin per 
+        <br> vendosjen n&euml Regjistrin e Njoftimit brenda 5 (pes&euml) dit&eumlve t&euml pun&eumls nga data e kompletimit t&euml Njoftimit. 
+     </p>
+
+     <p class="a4"> 
+           * Operatoret te Licencuar sipas Ligjit per Telekomunikacion Nr.2002/7 nuk jane te obliguar qe te plotesojne piken I, V dhe VI te Formularit te Njoftimit. 
+      </p>
+
+{% endblock %}
+
+{% block content %}
+
+<script>
+   $(document).ready(function() {
+         $('#arkep').validate({
+             rules: {
+               emri_i_ndermaresit: {
+                 required: true
+               },
+               numri_i_regjistrimit: {
+                 required: true,
+                 number: true,
+                 minlength: 7
+               },
+               numri_fiskal: {
+                 required: true
+               }
+             messages: {
+               emri_i_ndermaresit: {
+                 required: "Shkruani nje emer"
+               }
+               numri_i_regjistrimit: {
+                 required: "Numrat njeri, numrat!"
+               }
+             }
+         });
+   });
+  </script>
+
+
+<form id="arkep" method="post">
+    <p class="b2" >I. QELLIMI I NJOFTIMIT </p><br>
+       
+      <input type="radio" name="qellimi" value="fillim sherbimi" class="b18"> <b class="b20" >Fillimi i Sherbimit &nbsp &nbsp</b>
+      <input type="radio" name="qellimi" value="shtim sherbimi" > <b class="b20"> Shtimi i Sherbimit  &nbsp &nbsp</b>
+      <input type="radio" name="qellimi" value="heqje sherbimi">  <b class="b20"> Heqje e Sherbimit  </b>
+                      <br>
+
+  <p class="b1"> II.TE DHENAT PER NDERMARRESIN:</p>
+        
+       <b class="b10" >2.1 Emri i Ndermarresit (Entiteti)   </b>
+            <input type="text" name="emri_i_ndermaresit" id="emri_i_ndermaresit"  class="a5"><br>
+
+       <b class="b3">2.2 Numri i Regjistrimit te Biznesit &nbsp&nbsp</b>
+            <input type="text" name="numri_i_regjistrimit" id="numri_i_regjistrimit"  class="a5" ><br>
+
+       <b class="b4">2.3 Numri fiskal &nbsp&nbsp</b>
+            <input type="text" name="numri_fiskal" id="numri_fiskal"  class="a5" ><br>
+
+       <b class="b5">2.4  Adresa  &nbsp &nbsp</b>
+             <input type="text" name="adresa"  class="a5" ><br> 
+          
+       <b class="b6">2.5 Numri i Telefonit &nbsp </b>
+              <input type="text" name="numri i telefonit"  class="a5" ><br>
+   
+       <b class="b7">2.6 Numri i Faksit &nbsp&nbsp</b>
+              <input type="text" name="numri i faksit"  class="a5" ><br>
+
+       <b class="b3">2.7 Email Adresa </b>
+               <input type="email" name="email"  class="a5" >
+
+
+  
+   <p class="b1">III. TE DHENAT PER ZYRTARIN LIGJERISHT TE PERGJEGJESHEM:  </p><br>
+      
+         <b class="b8">3.1 Emri i Zyrtarit </b>
+                  <input type="text" name="emri i zyrtarit"  class="a5" ><br>
+         
+         <b class="b9">3.2 Adresa &nbsp</b>
+                  <input type="text" name="adresa e zyrtarit"  class="a5" ><br>
+         
+         <b class="b10">3.3 Numri i Telefonit </b>
+                   <input type="text" name="numri i zyrtarit"  class="a5" ><br>
+        
+          <b class="b8">3.4 Numri i Faksit </b>
+                   <input type="text" name="fax"  style="a5" ><br>
+         
+          <b class="b8">3.5 E-mail Adresa </b>
+                   <input type="email" name="adresa email"  class="a5" ><br>
+         
+          <b class="b11">3.6 Nr. I ID-se </b>
+                    <input type="text" name="ID"  class="a5" >
+
+
+
+   
+   <p class="b1">IV. AKTIVITETET TE CILAT NJOFTOHEN/CREGJISTROHEN:  </p><br> 
+                
+            <b class="b12" >4.1 Ofrimi i rrejtit publik fiks:</b><br>
+                    <input type="radio" name="lloji"     class="b14"  >  <b class="b13"> Lokal       </b><br>
+                    <input type="radio" name="lloji"     class="b14"  >  <b class="b13"> Nacional </b><br>
+                    <input type="radio" name="lloji"     class="b14"  >  <b class="b13"> Te tjera   </b><br>
+                         <b class="b15">Nese keni zgjedhur te tjera ju lutem specifikoni: </b><br>
+                                  <textarea name="rrjetipubl"   rows="10" cols="20" class="b16" ></textarea>
+                                        <br><br>
+
+
+           <b class="b12">4.2 Ofrimi i sherbimeve publike fikse:</b><br>
+                     <input type="radio" name="Sherbimet"    class="b17"><b class="b19"> Sherbime telefonike lokale/nacionale</b><br>
+                     <input type="radio" name="Sherbimet"    class="b18"><b class="b20"> Sherbime telefonike nderkombetare</b><br>
+                     <input type="radio" name="Sherbimet"    class="b18"><b class="b20"> Telefona publik me pagese</b><br>
+                     <input type="radio" name="Sherbimet"    class="b18"><b class="b20"> Sherbime tjera</b><br>
+                           <b class="b15">Nese keni zgjedhur sherbime te tjera ju lutem tregoni ato: </b><br>
+                                <textarea name="sherbimipubl"   rows="10" cols="20" class="b16"></textarea>
+                                        <br><br>   
+
+          <b class="b12">4.3 Ofrimi i rrjetit publik mobil:</b><br>
+                    <input type="radio" name="mobile" class="b17"><b class="b19"> Lokal</b><br>
+                    <input type="radio" name="mobile" class="b18"><b class="b20"> Nacional</b>
+                                         <br><br>
+      
+         <b class="b12">4.4 Ofrimi i sherbimeve publike mobile:</b><br>
+               <input type="radio" name="transmentime" class="b17"><b class="b19"> Sherbime telefonike te zerit</b><br>
+               <input type="radio" name="transmentime" class="b18"><b class="b20"> Transmetim te dhenash</b>
+                                         <br><br>
+     
+        <b class="b12">4.5 Ofrimi i sherbimeve te linjave me qira:</b><br>
+               <input type="radio" name="linja" class="b17"><b class="b19"> Fiber optik te pa-ndricuar</b><br>
+               <input type="radio" name="linja" class="b18"><b class="b20"> Linja tjera me qira</b>
+                                         <br><br>  
+
+        <b class="b12">4.6 Ofrimi i rrjetave publike me transmetim satelitor:</b><br>
+                  <input type="radio" name="rrjeta" class="b17">
+                     <b class="b19"> Ofrimi i rrjetave publike me transmetim satelitor</b>
+                                    <br><br> 
+
+        <b class="b12">4.7 Ofrimi i sherbimeve publike satelitore:</b><br>
+                 <input type="radio" name="satelite" class="b17"><b class="b19"> Ofrimi i sherbimeve publike satelitore</b>
+                                    <br><br>
+
+        <b class="b12">4.8 Ofrimi i sherbimeve te transmetimit te te dhenave (Internetit):</b><br>
+                 <input type="radio" name="internet" class="b17">
+                       <b class="b19"> Ofrimi i sherbimeve te transmetimit te te dhenave (Internetit)</b>
+                                     <br><br>
+
+        <b class="b12">4.9 Ofrimi i sherbimeve me vlere te shtuar:</b><br>
+                 <input type="radio" name="sherbimemevler" class="b17">
+                        <b class="b19"> Ofrimi i sherbimeve me vlere te shtuar</b>
+                                     <br>
+
+
+
+   <p class="b1">V.PERSHKRIMI I AKTIVITETIT DHE FAZA E OFRIMIT:  </p> <br>
+
+       <b class="b12">5.1 Pershkrimi i rrjetit dhe/ose sherbimit qe do te ofrohet:  </b>
+                  <p class="b2" >(Te jepen pershkrime te detajuara per secilin aktivitet te njoftuar duke specifikuar:  </p> 
+                  <p class="b2"> &middot A do te perdoret rrjeti vetanak apo ndonje rrjet tjeter, </p> 
+                  <p class="b2">  &middot Teknologjia e cila do te perdoret,                                    </p>
+                  <p class="b2">  &middot Radio frekuencat, te cilat planifikohen te perdoren,     </p>
+                  <p class="b2">  &middot Lista e sherbimeve qe planifikohen te ofrohen,             </p>
+                  <p class="b2"> &middot Etj.)     </p>
+                       <textarea name="pershkrimsherbimi"  placeholder="Jep pershkrimin ..." rows="10" cols="20" class="b16" ></textarea>
+                                <br><br>
+
+        <b class="b12">5.2 Faza e Ofrimit:</b><br>
+                  <p class="b2">(Te specifikohet koha e parashikuar per fillimin e aktivitetit te komunikimeve elektronike)</p>
+                       <textarea name="fazaeofrimit"  placeholder="Shkruaj ketu ..." rows="10" cols="20" class="b16" ></textarea>
+                                        <br><br>
+
+
+
+    <p class="b1">VI.DOKUMENTET E BASHKANGJITURA:  </p><br>
+
+
+         <b class="b12">6.1 Dokumentet e bashkangjitura si shtojce aplikacionit te Njoftimit</b>
+                 <p class="b21"> 1.Kopje e certifikates se regjistrimit te biznesit</p>
+                 <p class="b22">2.Kopje e Certifikates se numrit fiskal</p>
+                 <p class="b22">3.Kopje e dokumentit 'Informate mbi biznesin</p>
+                            <input type="file" id="myFile" class="b23" >
+                            <input type="file" id="myFile" class="b23" >
+                            <input type="file" id="myFile" class="b23" >
+                                   <br><br>
+
+
+
+   <p class="b1">VII.KONFIRMIMI I NJOFTIMIT:  </p><br>
+
+          <b class="b12">7.1 Ndermarrja kerkon qe t'i leshohet certifikata e konfirmimit te njoftimit per ofrimin e rrjeteve dhe/ose sherbimeve publike te 
+          <p class="b12"> komunikimeve elektronike te njoftuara permes ketij formulari: </p></b>
+                  <input type="radio" name="zgjedhja" class="b24"> <b class="b20"> Po </b><br>
+                  <input type="radio" name="zgjedhja" class="b18"> <b class="b20"> Jo  </b>
+                                 <br>
+
+
+
+   <p class="b1">VIII. DETYRIMET LIGJORE:  </p><br>
+
+       <input type="radio" name="1" class="b18"><b class="b25">Une nepermjet ketij dokumenti deklaroj se do te ushtroj aktivitet ne fushen e komunikimeve elektronike te shenuara me siper dhe aplikoj <br>
+                  <b class="b26">per regjistrim ne regjistrin e ofrueseve te rrjeteve dhe sherbimeve te komunikimeve elektronike te Autoritetit (ARKEP).</b></b><br>
+    
+       <input type="radio" name="1" class="b18"><b class="b25">Une nepermjet ketij dokumenti deklaroj se kam mbyllur aktivitetet e komunikimeve elektronike te shenuara me siper.</b><br>
+       
+      
+       <input type="radio" name="1" class="b18"><b class="b25">Une nepermjet ketij dokumenti deklaroj se kam mbyllur cdo aktivitet te komunikimeve elektronike nen regjimin e Autorizimit te<br>
+                 <b class="b26"> pergjithshem.</b></b><br>
+     
+       <input type="radio" name="1" class="b18"><b class="b25">Une nepermjet ketij dokumenti deklaroj se te dhenat e mia kane pesuar ndryshime, sikurse pershkruhen ne formular.</b><br>
+
+      <input type="radio" name="1" class="b18"><b class="b25">Une nepermjet ketij dokumenti deklaroj se kam ndryshuar formen ligjore te ndermarrjes si me sic pershkruhet ne formular.<br> 
+                 <b class="b26">Emri i vjeter eshte si me poshte;</b></b>
+                                     <br><br>
+
+
+       <p class="b27"> Une nepermjet ketij dokumenti paraqes ne ARKEP te gjithe dokumentacionin e nevojshem ligjor dhe/ose te gjithe dokumentet qe sigurojne se nenshkruesi i ketij Njoftimi Regjistrimi ka lidhje me personin perfaqesues.</p>
+       <p class="b27">Une deklaroj se informacioni qe perfshihet ne deklarimin e paraqitur, sikurse cdo informacion tjeter shoqerues , eshte i sakte dhe i vertete, dhe jam plotesisht i vetedijshem per faktin qe, lidhur me angazhimin ne cdo aktivitet 
+              te komunikimeve elektronike per te cilin eshte e nevojshme te sigurosh te drejten e perdorimit per numeracion dhe frekuenca, te drejta te cilat nuk sigurohen nepermjet kesaj procedure, une duhet te paraqes nje aplikim per te fituar te drejtat e
+              perdorimit te cituara me siper perpara fillimit te ofrimit te sherbimit.</p>
+                          <br><br> 
+
+   <input  type="reset" value="Reset" >
+   <input type="submit" value="Submit" >
+</form>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myFile");
+    x.disabled = true;
+}
+</script>
+
+{% endblock %}
