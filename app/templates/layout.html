@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <title>ARKEP-Formulari</title>
+      <link rel="icon" type="image/png" href="../static/ark.png"> 
+      <meta charset="utf-8">
+       <script src="js/jquery-1.11.0.min.js"></script>
+       
+<script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ url_for( 'static', filename='js/jquery-2.1.1.min.js') }}"></script>          
+                  <link rel="stylesheet" href="{{url_for( 'static', filename='css/ul.css') }}">
+	<link rel="stylesheet" href="{{url_for( 'static', filename='buton.css') }}">
+                  <link rel="stylesheet" href="{{url_for( 'static', filename='input.css') }}">
+                  <link rel="stylesheet" href="{{url_for( 'static', filename='b.css') }}">
+
+</head>
+<body style="background-color:#e4e4e4;">
+{% block header %}
+
+{% endblock %}
+
+<br>
+
+{% block content %}
+
+
+{% end block %}
+
+
+<br>
+
+<footer>
+ <ul style="width:100%;text-align:center;">
+      <br>
+
+   <b class="b28"> Adresa:Qyteza Pejton, Rr. Mujo Ulqinaku nr. 7, 10 000 Prishtine, Republika e Kosoves</b>
+       <br>
+
+     <img src="../static/email.png" class="b29"> </img>
+     <b class="b30"> info@arkep-rks.org </b>
+
+     <img src="../static/phone.png" class="b31"> </img>
+     <b class="b30">  + 381 (38) 212-345;</b>
+
+           <br><br>
+      <img src="../static/printer.png" class="b32"> </img>
+      <b class="b33"> + 381 (38) 212 399;</b>
+
+      <img src="../static/www.png" class="b34"> </img>
+      <b class="b35"> www.arkep-rks.org</b><br>
+
+   </ul>
+ </footer>
+
+</body>
+</html>
