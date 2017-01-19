@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request
 from app import mongo
-from bson import json util, ObjectId
+from bson import json_util, ObjectId
+from os.path import join, dirname, realpath
+from app import upload_folder
 
 mod_main = Blueprint('main', __name__)
 
@@ -12,6 +14,7 @@ def index():
     db = mongo.db.arkep
     if request.method == 'GET':
         return render_template('techstitution1.html')
+    
     elif request.method == 'POST':
         data = request.form.to_dict()
         db.insert(data)
