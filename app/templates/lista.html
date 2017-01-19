@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block header %} 
+<h1 style="margin-left:10%;font-weight:bold;">Kompania</h1>
+{% endblock %}
+{% block content%}
+
+<fieldset id="fieldset"> <table  id="tabela">
+<tr>
+<td id="h"><b>Emri i Ndermarresit<b></td>
+<td id="h"><b>Adresa<b></td>
+<td id="h"><b>Opsionet<b></td>
+</tr>
+<tbody>
+{% for item in documentat %}
+<tr>
+<td>{{ item['emri_i_ndermaresit'] }}</td>
+<td>{{ item['adresa'] }}</td>
+<td>
+<a href="{{url_for('main.get_doc',id=item._id)}}">View&nbsp;</a>
+<a href="{{url_for('main.remove_doc',id=item._id)}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</fieldset>
+{% endblock %}
+ {%endfor%}
+{% endblock %}
