@@ -8,17 +8,19 @@ mod_main = Blueprint('main', __name__)
 
 
 
-    @mod_main.route('/', methods=['GET','POST'])
-    def index():
-        
+@mod_main.route ('/' , methods=['GET' , 'POST'])
+def index():
+       
+   db = mongo.db.arkep
+
    if request.method == 'GET':
         return render_template("techstitution.html")
-    elif request.method =='POST':
+   elif request.method =='POST':
         data = request.form.to_dict()
         db.insert(data)
         return render_template("pranimimesukses.html")
         #return json_util.dumps(data)
-    else:
+   else:
         return 'bad request'
     
 
@@ -34,7 +36,7 @@ def get_doc(id):
         return "bad request"
     
     
-    @mod_main.route('/remove/<string:id>', methods=['GET'])
+@mod_main.route('/remove/<string:id>', methods=['GET'])
 def remove_doc(id):
     db = mongo.db.arkep
     if request.method == 'GET':
