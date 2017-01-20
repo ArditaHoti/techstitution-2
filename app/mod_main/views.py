@@ -6,9 +6,7 @@ from arkep import MyForm
 mod_main = Blueprint('main', __name__)
 
 
-
-
-@mod_main.route ('/' , methods=['GET' , 'POST'])
+@mod_main.route ('/' ,methods=['GET' , 'POST'])
 def index():
        
    db = mongo.db.arkep
