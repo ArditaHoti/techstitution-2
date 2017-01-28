@@ -5,12 +5,13 @@
         <title>ARKEP-Formulari</title>
       <link rel="icon" type="image/png" href="../static/ark.png"> 
       <meta charset="utf-8">
-       <script src="js/jquery-1.11.0.min.js"></script>
        
-<script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{{ url_for( 'static', filename='js/jquery-2.1.1.min.js') }}"></script>          
-                  <link rel="stylesheet" href="{{url_for( 'static', filename='css/ul.css') }}">
-	<link rel="stylesheet" href="{{url_for( 'static', filename='buton.css') }}">
+       
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
+        <script type="text/javascript" src="{{ url_for( 'static', filename='jquery.validate.min.js') }}"></script>          
+                  <link rel="stylesheet" href="{{url_for( 'static', filename='ul.css') }}">
+	<link rel="stylesheet" href="{{url_for( 'static', filename='button.css') }}">
                   <link rel="stylesheet" href="{{url_for( 'static', filename='input.css') }}">
                   <link rel="stylesheet" href="{{url_for( 'static', filename='b.css') }}">
 
@@ -25,7 +26,7 @@
 {% block content %}
 
 
-{% end block %}
+{% endblock %}
 
 
 <br>
