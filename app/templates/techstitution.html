@@ -1,7 +1,35 @@
 {% extends "layout.html" %}
 
 {% block header %}
-
+<style>
+ul {                                       
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #172433;
+    text-decoration:none;
+    cursor:default;
+}
+li {
+    list-style:none;
+    float: left;
+    font-weight:bold ;
+    text-decoration:none;
+}
+li a {
+    display: block;
+    color: #d3ac64;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+   font-weight:bold;
+   color: #deb964;
+   text-decoration:none;
+}
+</style>
 <ul >
    <li >
        <img src="../static/arkep2.png" style="margin-left:6px;margin-top:-5px;margin-right:2px;"></img>
@@ -17,7 +45,6 @@
         </a>
    </li>
 </ul>
-  
 <h1 class="a1">Formular Njoftimi</h1>
 
      <p class="a2">Hyrje ne aktivitetin e Komunikimeve Elektronike</p>
@@ -49,18 +76,37 @@
                  minlength: 7
                },
                numri_fiskal: {
+                 required: true,
+		 number: true
+               },
+		adresa: {
                  required: true
-               }
-
+               },
+		numri_i_telefonit: {
+                 required: true,
+                 number: true,
+                 minlength: 14
+               },
+		numri_i_faksit: {
+                 required: true,
+                 number: true,
+                 minlength: 8
+               },
+		email: {
+                 required: true                 
+		},
+		
 },
              messages: {
                emri_i_ndermaresit: {
-                 required: "Shkruani nje emer"
+                 required: "Shkruani emrin e nderrmaresit!"
                
 		},
                numri_i_regjistrimit: {
-                 required: "Ju lutem shkruani numrat!"
-               }
+                 required: "Shkruani numrin regjistrues te biznesit!"
+               },
+		numri_i_regjistrimit: {
+                 required: "Ju lutem shkruani numrat fiskal!"
              }
          });
    });
@@ -68,7 +114,7 @@
 
 
 <form id="arkep" method="post">
-    <p class="b2" >I. QELLIMI I NJOFTIMIT </p><br>
+    <p class="b1" >I. QELLIMI I NJOFTIMIT </p><br>
        
       <input type="radio" name="qellimi" value="fillim sherbimi" class="b18"> <b class="b20" >Fillimi i Sherbimit &nbsp &nbsp</b>
       <input type="radio" name="qellimi" value="shtim sherbimi" > <b class="b20"> Shtimi i Sherbimit  &nbsp &nbsp</b>
@@ -81,7 +127,7 @@
             <input type="text" name="emri_i_ndermaresit" id="emri_i_ndermaresit"  class="a5"><br>
 
        <b class="b3">2.2 Numri i Regjistrimit te Biznesit &nbsp&nbsp</b>
-            <input type="text" name="numri_i_regjistrimit" id="numri_i_regjistrimit"  class="a5" ><br>
+            <input type="text" name="numri_i_regjistrimit" id="numri_i_regjistrimit"  class="a5" style="margin-left:-7%;" ><br>
 
        <b class="b4">2.3 Numri fiskal &nbsp&nbsp</b>
             <input type="text" name="numri_fiskal" id="numri_fiskal"  class="a5" ><br>
@@ -89,11 +135,11 @@
        <b class="b5">2.4  Adresa  &nbsp &nbsp</b>
              <input type="text" name="adresa"  class="a5" ><br> 
           
-       <b class="b6">2.5 Numri i Telefonit &nbsp </b>
-              <input type="text" name="numri i telefonit"  class="a5" ><br>
+       <b class="b5">2.5 Numri i Telefonit &nbsp </b>
+              <input type="text" name="numri_i_telefonit"  class="a5" style="margin-left:-4%;"><br>
    
        <b class="b7">2.6 Numri i Faksit &nbsp&nbsp</b>
-              <input type="text" name="numri i faksit"  class="a5" ><br>
+              <input type="text" name="numri_i_faksit"  class="a5" ><br>
 
        <b class="b3">2.7 Email Adresa </b>
                <input type="email" name="email"  class="a5" >
@@ -112,7 +158,7 @@
                    <input type="text" name="numri i zyrtarit"  class="a5" ><br>
         
           <b class="b8">3.4 Numri i Faksit </b>
-                   <input type="text" name="fax"  style="a5" ><br>
+                   <input type="text" name="fax"  class="a5" ><br>
          
           <b class="b8">3.5 E-mail Adresa </b>
                    <input type="email" name="adresa email"  class="a5" ><br>
